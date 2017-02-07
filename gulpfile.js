@@ -4,18 +4,6 @@ var gulp = require('gulp'),
   less = require('gulp-less'),
   livereload = require('gulp-livereload');
 
-gulp.task('css-deps', function(){
-  gulp.src([
-    './node_modules/bootstrap/dist/css/bootstrap.css',
-    './node_modules/font-awesome/css/font-awesome.css'
-  ])
-    .pipe(concat('deps.css'))
-    .pipe(gulp.dest('./src/public/css'));
-
-  gulp.src('./node_modules/font-awesome/fonts/*.*')
-    .pipe(gulp.dest('./src/public/fonts'));
-});
-
 gulp.task('js-deps', function () {
   gulp.src([
     './node_modules/core-js/client/shim.min.js',
@@ -45,7 +33,7 @@ gulp.task('watch', function () {
   gulp.watch('less/**/*.less', ['less']);
 });
 
-gulp.task('start', ['js-deps', 'css-deps','less'], function () {
+gulp.task('start', ['js-deps', 'less'], function () {
   livereload.listen();
 });
 
