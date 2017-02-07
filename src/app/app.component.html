@@ -1,6 +1,21 @@
-<h1>Angular Router</h1>
-<nav>
-  <a routerLink="/welcome" routerLinkActive="active">Welcome</a>
-  <a routerLink="/home" routerLinkActive="active">Home</a>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" ui-sref="welcome">Angular 2</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a routerLink="/welcome" routerLinkActive="active">Welcome</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a routerLink="/home" routerLinkActive="active"><span class="fa fa-home"></span> Home</a></li>
+      </ul>
+    </div>
+  </div>
 </nav>
 <router-outlet></router-outlet>
